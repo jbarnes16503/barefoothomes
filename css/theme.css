@@ -33,7 +33,6 @@
 /* 1 - Google Font
 ------------------------------------------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900);
-
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300);
 
 @font-face {
@@ -80,7 +79,9 @@ html {
     padding: 0;
 }
 
-
+.theme-colour {
+    color: #ff9c00;
+}
 
 a, a:focus, a:active, a:link, img {
     outline: none;
@@ -327,13 +328,16 @@ h6 {
     border-color: #ddd;
 }
 
-
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #000;
+}
+
+.brand-name {
+    font-family: 'Quicksand', sans-serif;
 }
 
 .navbar-custom .navbar-brand {

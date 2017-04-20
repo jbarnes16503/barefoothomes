@@ -1,72 +1,46 @@
 <?php
 
-$errorMSG = "";
+$propertyDeveloper = $_POST["propertyDeveloper"];
+$homeOwner = $_POST["homeOwner"];
 
-// NAME
-if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
+$name = $_POST["name"];
+$email = $_POST["email"];
+$subject = $_POST["subject"];
+$message = $_POST["message"];
+
+$EmailTo = "contact@barefoothomes.co.uk";
+$Subject = "Barefoot Homes - New query recieved";
+
+$type = "";
+if ($propertyDeveloper == "") {
+    $type = "Home Owner";
 } else {
-    $name = $_POST["name"];
+    $type = "Property Developer";
 }
 
-// EMAIL
-if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
-} else {
-    $email = $_POST["email"];
-}
-
-// SUBJECT
-if (empty($_POST["subject"])) {
-    $errorMSG .= "Subject is required ";
-} else {
-    $subject = $_POST["subject"];
-}
-
-
-// MESSAGE
-if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required ";
-} else {
-    $message = $_POST["message"];
-}
-
-
-//Put Your respective Email at $EmailTO 
-
-$EmailTo = "PUT YOUR EMAIL HERE";
-$Subject = "New Message Received";
-
-// prepare email body text
 $Body = "";
+$Body .= "Type: ";
+$Body .= $type;
+$Body .= "\n";
 $Body .= "Name: ";
 $Body .= $name;
 $Body .= "\n";
-
 $Body .= "Email: ";
 $Body .= $email;
 $Body .= "\n";
-
 $Body .= "Subject: ";
 $Body .= $subject;
 $Body .= "\n";
-
-$Body .= "Message: ";
+$Body .= "\n" ."\n";
 $Body .= $message;
 $Body .= "\n";
+$Body .= "\n";
+$Body .= "\n";
+$Body .= "This email was automatically generated.";
 
-// send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
+mail($EmailTo, $Subject, $Body, "From:".$email);
 
-// redirect to success page
-if ($success && $errorMSG == ""){
-   echo "success";
-}else{
-    if($errorMSG == ""){
-        echo "Something went wrong :(";
-    } else {
-        echo $errorMSG;
-    }
-}
+$response .= 'Thank you ' .$name ."\n" ."\n" .'We have recieved your enquiry. A copy has been printed below:' ."\n" ."\n" ."\n" ."\n" .$message ."\n" ."\n" ."\n" ."\n" .'Please allow us up to 24 hours to respond to your query.' ."\n" ."\n" ."\n" .'Barefoot Homes';
+mail($email, "Your query has been recieved", $response, "From:".$EmailTo);
 
 ?>

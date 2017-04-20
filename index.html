@@ -173,38 +173,39 @@
                                 <p>London &amp; home counties</p>
                             </div>
                         </div>
+                        <p id="contact-success-message"></p>
                     </div>
                 </div> <!-- col end -->
                 <div class="col-md-8 col-sm-8 wow fadeInRight">
                     <form id="contactForm" action="form.php" method="post">
                             <div class="col-md-6">
                                 <label class="">
-                                    Property developer <input type="radio" name="optradio">
+                                    Property developer <input id="contact-property-developer" type="radio" name="optradio">
                                 </label>
                             </div>
                             <div class="col-md-6">
                                 <label class="">
-                                    Home owner <input type="radio" name="optradio">
+                                    Home owner <input id="contact-home-owner" type="radio" name="optradio">
                                 </label>
                             </div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" id="name" name="name" class="form-control" placeholder="Name *" required data-error="type your name">
+									<input type="text" id="contact-name" class="form-control" placeholder="Name *" required data-error="type your name">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="email" name="email" id="email" class="form-control" placeholder="Email *" required data-error="type your email">
+									<input type="email" id="contact-email" class="form-control" placeholder="Email *" required data-error="type your email">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="text" name="subject" id="subject" class="form-control" placeholder="Subject *" required data-error="type your Subject">
+									<input type="text" id="contact-subject" class="form-control" placeholder="Subject *" required data-error="type your Subject">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea id="message" name="message" cols="30" rows="6" class="textarea-block form-control" placeholder="Message*" required data-error="type your message"></textarea>
+									<textarea id="contact-message" cols="30" rows="6" class="textarea-block form-control" placeholder="Message*" required data-error="type your message"></textarea>
 								</div>
 							</div>
 							<div class="col-md-12"> 
